@@ -88,3 +88,9 @@ class Fleet(models.Model):
             'limit': 80,
             'context': {'default_fleet_id': self.id}
         }
+
+
+class ResUser(models.Model):
+    _inherit = 'res.users'
+
+    email = fields.Char(string='Email del Usuario',required=True)
