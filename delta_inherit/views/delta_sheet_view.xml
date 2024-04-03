@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="delta_sheet_form_view" model="ir.ui.view">
+        <field name="name">delta.sheet.form</field>
+        <field name="model">fleet.map.sheet</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="deltatech_fleet.fleet_map_sheet_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='avg_cons']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='norm_cons']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!-- Agregar más campos al XPath -->
+            <xpath expr="//field[@name='reservoir_level_start']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!-- Agregar más campos al XPath -->
+            <xpath expr="//field[@name='reservoir_level_end']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='driver2_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='liter_total']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date']" position="after">
+                <field name="origin"/>
+                <field name="destination"/>
+                <field name="used_stay"/>
+                <field name="advances"/>
+            </xpath>
+            <xpath expr="//field[@name='driver_id']" position="after">
+                <field name="client"/>
+                <field name="kg"/>
+                <field name="used_peaje"/>
+                <field name="varios"/>
+            </xpath>
+
+            <xpath expr="//field[@name='varios']" position="after">
+                <field name="varios_total" invisible="varios == False"/>
+            </xpath>
+            <xpath expr="//field[@name='used_stay']" position="after">
+                <field name="stay_total" invisible="used_stay == False"/>
+            </xpath>
+            <xpath expr="//field[@name='advances']" position="after">
+                <field name="advances_total" invisible="advances == False"/>
+            </xpath>
+            <xpath expr="//field[@name='used_peaje']" position="after">
+                <field name="peaje_total" invisible="used_peaje == False"/>
+            </xpath>
+
+            <xpath expr="//field[@name='amount_total']" position="after">
+                <field name="one_eight"/>
+                <field name="total_gan"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
